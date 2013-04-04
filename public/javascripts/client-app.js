@@ -7,7 +7,7 @@ var main = function () {
   
   function wordCount(response){
     var resp = response.toString();
-    for 9var i = 0; i < happyWords.length; i++){
+    for (var i = 0; i < happyWords.length; i++){
       if (happyWords[i]=== response.key){
         $(".happy").append("<p>" + response.key + " : " + response.value + "</p>");
         happyCount = happyCount+parseInt(response.value);
@@ -17,8 +17,8 @@ var main = function () {
       }
     }
   }
-  $.getJSON(".counts.json", function (response) { 
-    response.forEach(wordCounts);
+  $.getJSON("/counts.json", function (response) { 
+    response.forEach(wordCount);
     $("body").prepend("<p> Happy Count: " + happyCount + "</p>");
     $("body").prepend("<p> Sad Count: " + sadCount + "</p>");
   });
