@@ -19,7 +19,7 @@ var worker = function (allWords) {
         for (var i = 0; i<allWords.length; i++) {
           if(tweet.text.indexOf(allWords[i]>-1)){
             redisClient.incr(allWords[i]);
-          }            
+          }
         }
       });
     }
